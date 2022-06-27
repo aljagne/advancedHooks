@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
+import PurchaseButton from "../components/buttons/PurchaseButton"
 
 const IndexPage = () => (
   <Wrapper>
@@ -12,8 +13,13 @@ const IndexPage = () => (
       </Description>
       <AuthorWrapper>
         <AuthorImage scr="/images/avatars/Meng.png" alt="author image" />
-          <Caption>Taught by Badou boy</Caption>
+        <Caption>Taught by Badou boy</Caption>
       </AuthorWrapper>
+      <PurchaseButton />
+      <SmallText>
+        Purchase includes access to 30 courses. Over 80 hours of content,
+        including 12 hours for SwiftUI, for iOS 13 and iOS 14.
+      </SmallText>
     </TextWrapper>
   </Wrapper>
 )
@@ -26,46 +32,74 @@ const Wrapper = styled.div`
 `
 
 const TextWrapper = styled.div`
-position: relative;
-display: grid;
-gap: 20px;
-padding-top: 100px;
+  position: relative;
+  display: grid;
+  gap: 20px;
+  padding-top: 100px;
 `
 
-const AuthorWrapper = styled.div``
+const AuthorWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`
 
 const Logo = styled.img`
   height: 60px;
   width: 60px;
 `
 const Title = styled.h1`
-max-width: 500px;
-font-size: 60px;
-font-weight: bold;
-font-style: normal;
-line-height: 72px;
-color: #ffffff;
-mix-blend-mode: normal;
-text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  font-size: 60px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 72px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
 `
 
 const Caption = styled.p`
-font-size: 15px;
-font-style: normal;
-line-height: 130%;
-text-transform: uppercase;
-color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  font-style: normal;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
 `
 
 const Description = styled.p`
-max-width: 400px;
-font-size: 20px;
-font-style: normal;
-line-height: 140%;
-color: #ffffff;
+  max-width: 400px;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 140%;
+  color: #ffffff;
 `
 
 const AuthorImage = styled.img`
   width: 32px;
   height: 32px;
+`
+
+const SmallText = styled.p`
+  max-width: 280px;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.7);
+`
+
+const FlutterWrapper = styled.div`
+  margin: 100px auto;
+
+  @media (max-width: 1440px) {
+    transform-origin: top left;
+    transform: scale(${props => props.width / 1440});
+  }
+`
+
+const Divider = styled.div`
+  width: 300px;
+  height: 0.5px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 60px auto 32px;
 `
